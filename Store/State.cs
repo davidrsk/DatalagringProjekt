@@ -6,7 +6,8 @@ using Microsoft.EntityFrameworkCore;
 
 namespace Store
 {
-    class State
+    // Håller koll på den data som programmet måste komma ihåg mellan vyer/fönster förändringar
+    static class State
     {
         public static Customer User { get; set; }
         public static List<Movie> Movies { get; set; }

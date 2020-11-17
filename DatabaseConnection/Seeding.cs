@@ -22,6 +22,7 @@ namespace DatabaseConnection
                     new Customer { Name = "Kalle" },
                 });
 
+                // Här laddas data in från SeedData foldern för att fylla ut Movies tabellen
                 var movies = new List<Movie>();
                 var lines = File.ReadAllLines(@"..\..\..\SeedData\MovieGenre.csv");
                 for (int i = 1; i < 200; i++)
@@ -33,7 +34,7 @@ namespace DatabaseConnection
 
                     // Hoppa över alla icke-fungerande url:er
                     try{ var test = new Uri(url); }
-                    catch (Exception e) { continue; }
+                    catch (Exception) { continue; }
 
                     movies.Add(new Movie { Title = cells[2], ImageURL = url });
                 }
