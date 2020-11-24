@@ -6,8 +6,14 @@
         xmlns:local="clr-namespace:Store"
         mc:Ignorable="d"
         Title="MainWindow" Height="450" Width="800">
+    <!-- En ScrollViewer för att kunna scrolla igenom alla filmer -->
     <ScrollViewer>
+        <!-- 
+            Grid är användbart när man vill få lite struktur i sin UI.
+            Alla celler måste inte vara lika stora dock som i detta exemplet
+        -->
         <Grid Name="MovieGrid" Background="LightSteelBlue" ShowGridLines="True">
+            <!-- Här har jag manuellt bestämt antalet kolumner jag vill ha -->
             <Grid.ColumnDefinitions>
                 <ColumnDefinition />
                 <ColumnDefinition />
@@ -15,17 +21,8 @@
                 <ColumnDefinition />
                 <ColumnDefinition />
             </Grid.ColumnDefinitions>
+            <!-- Antalet rader fyller jag på inne i 'MainWindow.xaml.cs' -->
             <Grid.RowDefinitions>
-                <RowDefinition Height="140" />
-                <RowDefinition Height="140" />
-                <RowDefinition Height="140" />
-                <RowDefinition Height="140" />
-                <RowDefinition Height="140" />
-                <RowDefinition Height="140" />
-                <RowDefinition Height="140" />
-                <RowDefinition Height="140" />
-                <RowDefinition Height="140" />
-                <RowDefinition Height="140" />
             </Grid.RowDefinitions>
         </Grid>
     </ScrollViewer>
