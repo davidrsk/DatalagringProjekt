@@ -43,19 +43,28 @@ namespace DatabaseConnection
                     var cells = lines[i].Split(',');
 
                     var url = cells[5].Trim('"');
+                    var title = cells[2];
+                    var releaseYears = "";
 
-                    var releaseYears = cells[2];
+                    if (title.Contains("(")){
+                        var array = cells[2].Split(" (");
+                        title = array[0];
+                        releaseYears = array[1].Trim(')');
+                    };
+
+                    
+
 
                     // Hoppa över alla icke-fungerande url:er
-                    try{ var test = new Uri(url); }
+                    try { var test = new Uri(url); }
                     catch (Exception) { continue; }
 
                     movies.Add(new Movie {
-                        Title = cells[2], // ta bort år
+                        Title = title, // ta bort år
                         ImageURL = url,
                         Score = cells[3],
                         Genre = cells[4],
-                        ReleaseYear = 
+                        ReleaseYear = releaseYears,
                     }); ;
                 }
                 ctx.AddRange(movies);
