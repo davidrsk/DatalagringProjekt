@@ -26,7 +26,13 @@ namespace DatabaseConnection.Migrations
                         .HasColumnType("int")
                         .UseIdentityColumn();
 
-                    b.Property<string>("Name")
+                    b.Property<string>("EmailAdress")
+                        .HasColumnType("nvarchar(max)");
+
+                    b.Property<string>("FirstName")
+                        .HasColumnType("nvarchar(max)");
+
+                    b.Property<string>("LastName")
                         .HasColumnType("nvarchar(max)");
 
                     b.HasKey("Id");
@@ -41,8 +47,17 @@ namespace DatabaseConnection.Migrations
                         .HasColumnType("int")
                         .UseIdentityColumn();
 
+                    b.Property<string>("Genre")
+                        .HasColumnType("nvarchar(max)");
+
                     b.Property<string>("ImageURL")
                         .HasColumnType("nvarchar(max)");
+
+                    b.Property<string>("Language")
+                        .HasColumnType("nvarchar(max)");
+
+                    b.Property<int>("ReleaseYear")
+                        .HasColumnType("int");
 
                     b.Property<string>("Title")
                         .HasColumnType("nvarchar(max)");
@@ -65,7 +80,13 @@ namespace DatabaseConnection.Migrations
                     b.Property<DateTime>("Date")
                         .HasColumnType("datetime2");
 
+                    b.Property<DateTime>("DateExpires")
+                        .HasColumnType("datetime2");
+
                     b.Property<int?>("MovieId")
+                        .HasColumnType("int");
+
+                    b.Property<int>("Price")
                         .HasColumnType("int");
 
                     b.HasKey("Id");
@@ -80,11 +101,11 @@ namespace DatabaseConnection.Migrations
             modelBuilder.Entity("DatabaseConnection.Rental", b =>
                 {
                     b.HasOne("DatabaseConnection.Customer", "Customer")
-                        .WithMany("Sales")
+                        .WithMany("Rentals")
                         .HasForeignKey("CustomerId");
 
                     b.HasOne("DatabaseConnection.Movie", "Movie")
-                        .WithMany("Sales")
+                        .WithMany("Rentals")
                         .HasForeignKey("MovieId");
 
                     b.Navigation("Customer");
@@ -94,12 +115,12 @@ namespace DatabaseConnection.Migrations
 
             modelBuilder.Entity("DatabaseConnection.Customer", b =>
                 {
-                    b.Navigation("Sales");
+                    b.Navigation("Rentals");
                 });
 
             modelBuilder.Entity("DatabaseConnection.Movie", b =>
                 {
-                    b.Navigation("Sales");
+                    b.Navigation("Rentals");
                 });
 #pragma warning restore 612, 618
         }
