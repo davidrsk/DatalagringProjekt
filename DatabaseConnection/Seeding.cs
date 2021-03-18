@@ -44,11 +44,19 @@ namespace DatabaseConnection
 
                     var url = cells[5].Trim('"');
 
+                    var releaseYears = cells[2];
+
                     // Hoppa över alla icke-fungerande url:er
                     try{ var test = new Uri(url); }
                     catch (Exception) { continue; }
 
-                    movies.Add(new Movie { Title = cells[2], ImageURL = url });
+                    movies.Add(new Movie {
+                        Title = cells[2], // ta bort år
+                        ImageURL = url,
+                        Score = cells[3],
+                        Genre = cells[4],
+                        ReleaseYear = 
+                    }); ;
                 }
                 ctx.AddRange(movies);
 

@@ -35,7 +35,11 @@ namespace DatabaseConnection
             // Försök att lägga till ett nytt sales record
             try
             {
-                ctx.Add(new Rental() { Date = DateTime.Now, Customer = customer, Movie = movie });
+                ctx.Add(new Rental() { 
+                    Date = DateTime.Now, 
+                    Customer = customer, 
+                    Movie = movie,
+                });
 
                 bool one_record_added = ctx.SaveChanges() == 1;
                 return one_record_added;
