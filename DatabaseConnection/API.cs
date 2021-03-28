@@ -37,6 +37,7 @@ namespace DatabaseConnection
             {
                 ctx.Add(new Rental() { 
                     Date = DateTime.Now, 
+                    DateExpires = DateTime.Now.AddDays(1),
                     Customer = customer, 
                     Movie = movie,
                 });

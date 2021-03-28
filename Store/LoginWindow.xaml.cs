@@ -27,7 +27,7 @@ namespace Store
         {
             // Använder min namngedda TextBox objektinstans för att få tag på
             // det användaren skrev in.
-            string username_in_text = NameField.Text.Trim();
+            string username_in_text = NameField.Text.Trim(); //tar bort whitespace
 
             // Kallar på min databas api för att få ut ett record som matchar namnet.
             State.User = API.GetCustomerByName(username_in_text);
@@ -46,6 +46,7 @@ namespace Store
             {
                 // Annars återställer vi innehållet i TextBox
                 NameField.Text = "...";
+                MessageBox.Show("Skapa ett konto för att logga in");
             }
         }
     }

@@ -7,17 +7,45 @@
         mc:Ignorable="d"
         Title="LoginWindow" Height="450" Width="800">
     <Grid>
-        <Label Content="Enter Your Name" HorizontalAlignment="Center" Margin="0,108,0,0" VerticalAlignment="Top"/>
-        <!-- 
+        <Grid.RowDefinitions>
+            <RowDefinition Height="70"></RowDefinition>
+            <RowDefinition></RowDefinition>
+        </Grid.RowDefinitions>
+        <Grid.ColumnDefinitions>
+            <ColumnDefinition Width="500"></ColumnDefinition>
+            <ColumnDefinition></ColumnDefinition>
+        </Grid.ColumnDefinitions>
+
+        <Label Grid.Column="0" Grid.Row="0" Content="Hyr film" HorizontalAlignment="Center" VerticalAlignment="Center"
+               FontSize="30" FontWeight="Heavy"
+        ></Label>
+        <StackPanel Grid.Column="0" Grid.Row="1">
+            <Label  Content="Se på film 24 timmar om dygnet utan paus"
+               HorizontalAlignment="Center" FontSize="15" >
+                
+            </Label>
+            <Border Margin="10,10,10,0" BorderBrush="black" BorderThickness="5">
+                <Image Source="Img/Hector.jpg" Stretch="Fill"></Image>
+            </Border>
+            
+        </StackPanel>
+
+        <StackPanel Grid.Column="1" Grid.Row="1">
+            <Label Content="First Name:" HorizontalAlignment="Left" VerticalAlignment="Top"/>
+            <!-- 
             En TextBox för att hämta in ett användarnamn från användaren. 
             Ger objektinstansen ett namn för att komma åt det inne i C# koden.
-        -->
-        <TextBox Name="NameField" HorizontalAlignment="Center" Margin="0,184,0,0" Text="..." TextWrapping="Wrap" VerticalAlignment="Top" Width="120"/>
-        <!-- 
+            -->
+            <TextBox Name="NameField" HorizontalAlignment="Left" Text="..." TextWrapping="Wrap" 
+                     VerticalAlignment="Top" Width="120"/>
+            <!-- 
             En Button att klicka på när man vill logga in.
             Click-eventet är kopplat till LogIn_Click metoden 
             som finns definierad inne i 'LoginWindow.xaml.cs'
         -->
-        <Button Click="LogIn_Click" Content="Log In" HorizontalAlignment="Center" Margin="0,246,0,0" VerticalAlignment="Top"/>
+            <Button Click="LogIn_Click" Content="Log In" HorizontalAlignment="Center" VerticalAlignment="Top"/>
+        </StackPanel>
+        
+        
     </Grid>
 </Window>

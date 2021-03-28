@@ -52,9 +52,6 @@ namespace DatabaseConnection
                         releaseYears = array[1].Trim(')');
                     };
 
-                    
-
-
                     // Hoppa över alla icke-fungerande url:er
                     try { var test = new Uri(url); }
                     catch (Exception) { continue; }
