@@ -3,7 +3,7 @@
         xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
         xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
         xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
-        xmlns:local="clr-namespace:Store"
+        xmlns:local="clr-namespace:Store.UserControls"
         mc:Ignorable="d"
         Title="LoginWindow" Height="450" Width="800">
     <Grid>
@@ -16,11 +16,11 @@
             <ColumnDefinition></ColumnDefinition>
         </Grid.ColumnDefinitions>
 
-        <Label Grid.Column="0" Grid.Row="0" Content="Hyr film" HorizontalAlignment="Center" VerticalAlignment="Center"
+        <Label Grid.Column="0" Grid.Row="0" Content="Rent Movies" HorizontalAlignment="Center" VerticalAlignment="Center"
                FontSize="30" FontWeight="Heavy"
         ></Label>
         <StackPanel Grid.Column="0" Grid.Row="1">
-            <Label  Content="Se på film 24 timmar om dygnet utan paus"
+            <Label  Content="Watch movies 24 hours a day without pause"
                HorizontalAlignment="Center" FontSize="15" >
                 
             </Label>
@@ -31,21 +31,22 @@
         </StackPanel>
 
         <StackPanel Grid.Column="1" Grid.Row="1">
-            <Label Content="First Name:" HorizontalAlignment="Left" VerticalAlignment="Top"/>
+            <Label Content="First Name:" HorizontalAlignment="Left"/>
             <!-- 
             En TextBox för att hämta in ett användarnamn från användaren. 
             Ger objektinstansen ett namn för att komma åt det inne i C# koden.
             -->
-            <TextBox Name="NameField" HorizontalAlignment="Left" Text="..." TextWrapping="Wrap" 
-                     VerticalAlignment="Top" Width="120"/>
+            <TextBox Name="NameField" HorizontalAlignment="Left" Text="..." TextWrapping="Wrap" Width="120"/>
             <!-- 
             En Button att klicka på när man vill logga in.
             Click-eventet är kopplat till LogIn_Click metoden 
             som finns definierad inne i 'LoginWindow.xaml.cs'
-        -->
-            <Button Click="LogIn_Click" Content="Log In" HorizontalAlignment="Center" VerticalAlignment="Top"/>
+            -->
+            <Button Click="LogIn_Click" Content="Log In" Margin="10" Padding="2,0,10,0" HorizontalAlignment="Center"/>
+            <Button Click="Register_Click" Content="Register" HorizontalAlignment="Center"/>
+
+            <local:RegisterWindow x:Name="RegisterWindow" Visibility="Hidden"></local:RegisterWindow>
+
         </StackPanel>
-        
-        
     </Grid>
 </Window>

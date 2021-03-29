@@ -46,8 +46,13 @@ namespace Store
             {
                 // Annars återställer vi innehållet i TextBox
                 NameField.Text = "...";
-                MessageBox.Show("Skapa ett konto för att logga in");
+                MessageBox.Show("Please register an account in order to log in");
             }
+        }
+
+        private void Register_Click(object sender, RoutedEventArgs e)
+        {
+            RegisterWindow.Visibility = Visibility.Visible;
         }
     }
 }
