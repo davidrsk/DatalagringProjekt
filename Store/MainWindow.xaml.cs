@@ -111,7 +111,7 @@ namespace Store
             // Försök att registrera en uthyrning.
             if (API.RegisterSale(State.User, State.Pick))
                 // MessageBox är små pop-up fönster som är behändiga för att varna användaren om fel etc.
-                MessageBox.Show("All is well and you can download your movie now.", "Sale Succeeded!", MessageBoxButton.OK, MessageBoxImage.Information);
+                MessageBox.Show("Added to cart", "Order complete!", MessageBoxButton.OK, MessageBoxImage.Information);
             else
                 MessageBox.Show("An error happened while buying the movie, please try again at a later time.", "Sale Failed!", MessageBoxButton.OK, MessageBoxImage.Exclamation);
         }

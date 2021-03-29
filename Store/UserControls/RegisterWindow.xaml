@@ -17,7 +17,7 @@
             <ColumnDefinition></ColumnDefinition>
             <ColumnDefinition></ColumnDefinition>
         </Grid.ColumnDefinitions>
-        <StackPanel>
+        <StackPanel Background="WhiteSmoke">
             <Label Grid.Column="0" Grid.Row="0" Content="First Name:" HorizontalAlignment="Left"/>
             <TextBox Grid.Column="0" Grid.Row="0" Name="FirstName" HorizontalAlignment="Left" Text="..." TextWrapping="Wrap" Width="120"/>
 
