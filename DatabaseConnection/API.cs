@@ -52,5 +52,28 @@ namespace DatabaseConnection
                 return false;
             }
         }
+
+        public static bool RegisterCustomer(Customer customer)
+        {
+            // Försök att lägga till en ny customer
+            try
+            {
+                ctx.Add(new Customer()
+                {
+                    FirstName = customer.FirstName,
+                    LastName = customer.LastName,
+                    EmailAdress = customer.EmailAdress,
+                });
+
+                bool added_customer = ctx.SaveChanges() == 1;
+                return added_customer;
+            }
+            catch (DbUpdateException e)
+            {
+                System.Diagnostics.Debug.WriteLine(e.Message);
+                System.Diagnostics.Debug.WriteLine(e.InnerException.Message);
+                return false;
+            }
+        }
     }
 }

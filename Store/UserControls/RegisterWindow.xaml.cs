@@ -32,11 +32,15 @@ namespace Store.UserControls
 
             if (State.User == null)
             {
-                Customer new_customer = new Customer();
 
-                new_customer.FirstName = first_name;
-                new_customer.LastName = last_name;
-                new_customer.EmailAdress = email;
+                Customer new_customer = new Customer()
+                {
+                    FirstName = first_name,
+                    LastName = last_name,
+                    EmailAdress = email
+                };
+
+                API.RegisterCustomer(new_customer);
 
                 MessageBox.Show("Registration completed!");
             }
